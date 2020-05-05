@@ -4,7 +4,7 @@ if(!$conn){
 	echo "Not Connected";
 }
 else{
-	
+	header("location:home.php");
 }
 
 ?>
