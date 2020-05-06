@@ -1,12 +1,14 @@
-<?php
-/*
-$conn=mysqli_connect('localhost','root','','iti');
-if(!$conn){
-	echo "Not Connected";
-}
-else{
-}
-*/
+<?php include_once "res/content/main.php"; ?>
 
-header("location:home.php");
+<div style="display: flex; justify-content: center;">
+    <img src="res/icons/logo.png" class="w-100" style="max-width:500px;">
+</div>
+
+<?php 
+    include_once "res/content/card.php";
+    include_once "res/content/footer.php";
 ?>
+
+</body>
+
+</html>
