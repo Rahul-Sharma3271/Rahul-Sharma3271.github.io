@@ -1,8 +1,8 @@
 <?php
 
-	require('conn.php');
-	require('nbar.php');
+	//require('conn.php');
 	require('bstrap.php');
+	require('nbar.php');
 	require('font.php');
 	require('topbtn.php');
 ?>

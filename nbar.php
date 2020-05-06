@@ -1,8 +1,3 @@
-<?php
-require('conn.php');
-require('bstrap.php');
-require('font.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
