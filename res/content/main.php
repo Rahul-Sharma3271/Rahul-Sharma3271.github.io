@@ -18,7 +18,7 @@
     -->
     <script src="res/js/main.js"></script>
     <link rel="stylesheet" href="res/css/style.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
 </head>
 
 <body>

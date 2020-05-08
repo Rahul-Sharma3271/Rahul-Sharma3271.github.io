@@ -1,3 +1,6 @@
+*{
+	font-family: 'Jua';
+}
 body {
 	display: flex;
 	flex-direction: column;
@@ -24,6 +27,9 @@ body {
 .nav-item{
 	display: flex;
 	justify-content: center;
+}
+.nav-item:hover{
+	background-color: #044fc0;
 }
 .navbar a {
 	color: #fff;
