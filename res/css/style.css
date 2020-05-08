@@ -16,6 +16,7 @@ body {
 	.navbar{
 		height: 60px;
 	}
+	
 	.navbar-nav{
 		display: flex;
 		width: 100%;

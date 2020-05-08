@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
 
-    <img class="navbar-brand" width="50px" src="res/icons/brand.png" alt="Logo">
+    <a href="index.php"><img class="navbar-brand" width="50px" src="res/icons/brand.png"  alt="Logo"></a>
 
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" style="outline: none;">
         <img class="navbar-toggler-icon" src="res/icons/toggle.png">
@@ -17,17 +17,17 @@
                 <a class="nav-link" href="courses.php">Courses</a>
             </li>
 
-            <li class="nav-item">
+           <!--  <li class="nav-item">
                 <a class="nav-link disabled" href="centers.php">Centers</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="staff.php">Staff</a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="feedback.php">Feedback</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
