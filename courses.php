@@ -20,7 +20,7 @@
 				<?php echo $row['subject']; ?>
 			</td>
 			<td>
-				<a href="about.php?name=<?php echo $row["name"];?>" id="demo">
+				<a href="mentor_about.php?name=<?php echo $row["name"];?>" id="demo">
 					<button onclick="myFunction()">
 						<?php echo $row["name"]?>
 					</button>
