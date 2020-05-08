@@ -1,3 +1,6 @@
+*{
+	font-family: 'Jua';
+}
 body {
 	display: flex;
 	flex-direction: column;
