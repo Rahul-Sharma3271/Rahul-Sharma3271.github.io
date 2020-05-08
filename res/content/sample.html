@@ -1,36 +1,103 @@
 <style>
-    .side-tab{
+    .side-tab-container {
         position: fixed;
+        top: 40%;
+        z-index: 9;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side-tab {
         width: 150px;
         height: 50px;
-        top: 50%;
-        z-index: 4;
         border-radius: 0 25px 25px 0;
         padding: 5px;
         transition: 400ms;
-        background-color: #888;
+        background-color: #060042;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
-        left: -100px;
+        margin: 2px;
+        margin-left: -100px;
     }
-    .side-tab:hover{
-        left:0;
+
+    .side-tab:hover {
+        margin-left: 0;
     }
-    .side-tab-title{
-        padding:10px;
+
+    .side-tab-title {
+        padding: 10px;
         color: #fff;
         font-size: 20px;
     }
-    .side-tab-icon{
+
+    .side-tab-icon {
         border-radius: 50%;
         width: 40px;
         height: 40px;
         float: right;
         background-color: #fff;
     }
+
+    .popup-wrapper {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        left: 0;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, .6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
-<div class="side-tab">
-    <div class="side-tab-icon"></div>
-    <div class="side-tab-title">Login </div>
+<div class="side-tab-container">
+    <div class="side-tab" data-toggle="modal" data-target="#loginModal">
+        <div class="side-tab-icon"></div>
+        <div class="side-tab-title">Login </div>
+    </div>
+    <div class="side-tab" onclick="show_logout();">
+        <div class="side-tab-icon"></div>
+        <div class="side-tab-title">Sign Up
+        </div>
+    </div>
+</div>
+<!--div class="popup-wrapper">
+    <div class="popup-tab bg-light rounded-lg p-4">
+        <h3>Login</h3>
+        Username<br>
+        <input type="text"><br><br>
+        Password<br>
+        <input type="text"><br><br>
+        <button class="btn btn-primary">Login</button>
+        <button class="btn btn-danger">Close</button>
+    </div>
+</div-->
+
+
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <form action="" method="get">
+                    <label for="username">Username</label><br>  
+                    <input type="text" name="username" class="rounded-lg border p-2"><br><br>
+                    <label for="password">Password</label><br>
+                    <input name="password" type="password" class="rounded-lg border p-2"><br><br>
+                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
