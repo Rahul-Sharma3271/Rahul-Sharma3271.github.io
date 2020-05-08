@@ -1,0 +1,36 @@
+<style>
+    .side-tab{
+        position: fixed;
+        width: 150px;
+        height: 50px;
+        top: 50%;
+        z-index: 4;
+        border-radius: 0 25px 25px 0;
+        padding: 5px;
+        transition: 400ms;
+        background-color: #888;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        left: -100px;
+    }
+    .side-tab:hover{
+        left:0;
+    }
+    .side-tab-title{
+        padding:10px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .side-tab-icon{
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        float: right;
+        background-color: #fff;
+    }
+</style>
+<div class="side-tab">
+    <div class="side-tab-icon"></div>
+    <div class="side-tab-title">Login </div>
+</div>
