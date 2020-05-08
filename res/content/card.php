@@ -14,7 +14,7 @@
 		<div class="flip-card-inner">
 
 			<div class="flip-card-front">
-				<img src="res/ximages/<?php echo $row['image']; ?>">
+				<img src="res/images/<?php echo $row['image']; ?>">
 			</div>
 
 			<div class="flip-card-back">
