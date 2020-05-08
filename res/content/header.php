@@ -34,12 +34,6 @@
             </li>
 
         </ul>
-        <hr>
-        <form class="form-inline m-4">
-            <input class="form-control my-2" style="max-width: 50%;" type="search" placeholder="Search">
-            <button class="btn btn-primary m-2" type="submit">Search</button>
-        </form>
-
     </div>
 
 </nav>
