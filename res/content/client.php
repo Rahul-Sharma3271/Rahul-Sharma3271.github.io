@@ -64,7 +64,7 @@
             <div class="modal-body p-3">
                 <div style="display: flex; flex-direction: row;">
                     <div>
-                        <form action="" method="get">
+                        <form action="logindb.php" method="POST">
                             <label for="username">Username</label><br>
                             <input type="text" name="username" class="rounded-lg border p-2"><br><br>
                             <label for="password">Password</label><br>
@@ -88,6 +88,9 @@
 
     </div>
 </div>
+
+<!-- --------------------------Sign-UP------------------------------ -->
+
 <div id="signupModal" class="modal fade" style="top:20%;" role="dialog">
     <div class="modal-dialog">
 
@@ -99,7 +102,11 @@
             </div>
             <div class="modal-body px-5 py-3">
                 <img src="res/icons/rregister.png" width="80px" alt="Login">
-                <form action="" method="get">
+                 <form action="registerdb.php" method="POST">
+                            <label for="username">Username</label><br>
+                            <input type="text" name="username" class="rounded-lg border p-2"><br><br>
+                            <label for="password">Password</label><br>
+                            <input name="password" type="password" class="rounded-lg border p-2">
                     <br><br>
                     <button class="btn btn-primary">Signup</button>
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
