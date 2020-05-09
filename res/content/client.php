@@ -71,9 +71,12 @@
                             <input name="password" type="password" class="rounded-lg border p-2"><br><br>
                             <button class="btn btn-primary">Login</button>
                             <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        </form>
+                        </form><br>
+                        Forgot Password? <a href="">Click here</a>
                     </div>
-                    <div style="width:100%;display: flex;align-items: center; justify-content: center;">
+                    <div style="width:10
+                    
+                    0%;display: flex;align-items: center; justify-content: center;">
                         <img src="res/icons/login.png" width="200px" alt="Login">
                     </div>
                 </div>

@@ -5,7 +5,7 @@
 </div>
 
 <?php 
-    include_once "res/content/sample.html";
+    include_once "res/content/client.php";
     include_once "res/content/card.php";
     include_once "res/content/footer.php";
 ?>

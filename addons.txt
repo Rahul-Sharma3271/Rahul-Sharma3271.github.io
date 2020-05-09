@@ -1,4 +1,0 @@
-carousel on home
-beneath it an attractive table of:
-	courses available
-	rates 
