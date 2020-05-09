@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2020 at 10:23 AM
+-- Generation Time: May 09, 2020 at 02:34 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -179,13 +180,13 @@ CREATE TABLE `hcard` (
 
 INSERT INTO `hcard` (`hcid`, `image`, `name`, `title`, `email`, `subject`) VALUES
 (1, 'damanpreetsingh.JPEG', 'Mr.Damanpreet Singh', '', 'damanpreet666636@gmail.com', 'MySql,+1&2 Mathematics,Banking-Exams'),
-(2, 'rishabh.jpeg', 'Mr.Risahbh Grewal', '', 'rishabhpalia000@gmail.com', 'DBMS,+1&2 Mathematics,Digital-Electronics'),
+(2, 'rishabh.jpeg', 'Mr.Rishabh Grewal', '', 'rishabhpalia000@gmail.com', 'DBMS,+1&2 Mathematics,Digital-Electronics'),
 (3, 'vishal.png', 'Mr.Vishal Kakkar', '', 'krishna.kakkar77@gmail.com', 'C,C++,JAVA,PHP'),
 (4, 'rahulsharma.jpeg', 'Mr.Rahul Sharma', '', 'rahul11sharma1999@gmail.com', 'PCM,Web-Technology,Quantitative-Aptitude'),
 (5, 'ruchikakashyap.jpeg', 'Miss.Ruchika Kashyap', '', 'ruchikakashyap4573@gmail.com', 'Hindi,Punjabi'),
 (6, 'adityakashyap.jpeg', 'Mr.Aditya Kashyap', '', 'adityakashyap775@gmail.com', 'English,Social-Science'),
 (7, 'tusharparkash.jpeg', 'Mr.Tushar Parkash', '', 'tusharparkash7@gmail.com', 'Marketing'),
-(9, 'munishkumar.jpeg', 'Mr.Munisha Kumar', '', 'mk6229478@gmail.com', 'Jquery,Java-Script');
+(9, 'munishkumar.jpeg', 'Mr.Munish Kumar', '', 'mk6229478@gmail.com', 'Jquery,Java-Script');
 
 -- --------------------------------------------------------
 
@@ -545,8 +546,8 @@ INSERT INTO `staff` (`sid`, `name`, `subject`) VALUES
 (20, 'Mr.Rahul Sharma', 'Web Technology'),
 (21, 'Mr.Damanpreet Singh', 'Software Engineering'),
 (22, 'Mr.Tushar Parkash', 'Business Management&Marketing'),
-(23, 'Mr.Munisha Kumar', 'Java Script'),
-(24, 'Mr.Munisha Kumar', 'Jquery');
+(23, 'Mr.Munish Kumar', 'Java Script'),
+(24, 'Mr.Munish Kumar', 'Jquery');
 
 -- --------------------------------------------------------
 
@@ -565,9 +566,9 @@ CREATE TABLE `teachers` (
 
 INSERT INTO `teachers` (`tid`, `name`) VALUES
 (6, 'Miss.Ruchika Kashyap'),
+(8, 'Mr. Munish Kumar'),
 (4, 'Mr.Aditya Kashyap'),
 (1, 'Mr.Damanpreet Singh'),
-(8, 'Mr.Munisha Kumar'),
 (5, 'Mr.Rahul Sharma'),
 (3, 'Mr.Rishabh Grewal'),
 (7, 'Mr.Tushar Parkash'),
