@@ -9,7 +9,7 @@
         <div class="card-img"><img class="w-100 p-3" style="max-width:500px;" src="res/images/<?php echo $data['image'];?>" alt=""></div>
         <div class="card-body">
             <div class="card-title"><h2><?php echo $data['name'];?></h2></div>
-            <p><?php echo $data['subject'];?></p>
+            <div style="max-width: 460px;"><p><?php echo $data['about'];?></p></div>
         </div>
     </div>
     <!--

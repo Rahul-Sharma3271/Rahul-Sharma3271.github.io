@@ -39,6 +39,10 @@
         float: right;
         background-color: #fff;
     }
+    .validation:invalid{
+        border: 2px solid red;
+    }
+
 </style>
 <div class="side-tab-container">
     <div class="side-tab" data-toggle="modal" data-target="#loginModal">
@@ -66,7 +70,7 @@
                     <div>
                         <form action="logindb.php" method="POST">
                             <label for="username">Username</label><br>
-                            <input type="text" name="username" class="rounded-lg border p-2"><br><br>
+                            <input type="text" required name="username" id="validation" class="rounded-lg border p-2" ><br><br>
                             <label for="password">Password</label><br>
                             <input name="password" type="password" class="rounded-lg border p-2"><br><br>
                             <button class="btn btn-primary">Login</button>
