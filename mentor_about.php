@@ -6,10 +6,14 @@
 ?>
 <div class="cards">
     <div class="card">
-        <div class="card-img"><img class="w-100 p-3" style="max-width:500px;" src="res/images/<?php echo $data['image'];?>" alt=""></div>
+        <div class="card-img"><img class="w-100 p-3" style="max-width:500px;max-height: 500px;" src="res/images/<?php echo $data['image'];?>" alt=""></div>
         <div class="card-body">
             <div class="card-title"><h2><?php echo $data['name'];?></h2></div>
             <div style="max-width: 460px;"><p><?php echo $data['about'];?></p></div>
+        </div>
+        <div>
+            <input type="submit" name="contact" id="lft" style="float: left; margin-left:15px;padding: 3px;margin-bottom: 15px;background-color: lightgreen;"value="<?php echo $data['contact']; ?>">
+            <input type="submit" style="float: right;margin-right: 15px;padding: 3px;margin-bottom: 15px;background-color: lightgreen;" name="email" value="<?php echo $data['email']; ?>">
         </div>
     </div>
     <!--

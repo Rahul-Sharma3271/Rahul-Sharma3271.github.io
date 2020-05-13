@@ -76,7 +76,7 @@
                             <button class="btn btn-primary">Login</button>
                             <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         </form><br>
-                        Forgot Password? <a href="">Click here</a>
+                        Forgot Password? <a href="mail/index.php">Click here</a>
                     </div>
                     <div style="width:10
                     
@@ -109,6 +109,8 @@
                  <form action="registerdb.php" method="POST">
                             <label for="username">Username</label><br>
                             <input type="text" name="username" class="rounded-lg border p-2"><br><br>
+                            <label for="email">E-Mail</label><br>
+                            <input name="email" type="email" class="rounded-lg border p-2"><br><br>
                             <label for="password">Password</label><br>
                             <input name="password" type="password" class="rounded-lg border p-2">
                     <br><br>
