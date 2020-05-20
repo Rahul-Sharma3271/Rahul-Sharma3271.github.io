@@ -29,7 +29,13 @@
                 <div style="display: flex; flex-direction: row;">
                     <div>
                         <form action="logindb.php" method="POST">
+                            <label for="image">Image</label><br>
+                            <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
                             <label for="username">Username</label><br>
+                            <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
+                            <label for="age">Age</label><br>
+                            <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
+                            <label for="resume">Resume</label><br>
                             <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
                             <label for="password">Password</label><br>
                             <input name="password" type="password" class="rounded-lg border p-2"><br><br>
@@ -70,10 +76,10 @@
                     <option value="student">A Student</option>
                     <option value="mentor">A Mentor</option>
                 </select>
-
-                <div id="student-signup" class="p-2 mt-3 border" style="display:none;">
+<!-- ------------------------------Student-Signup-------------------------------------- -->
+                <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
-                    <form action="registerdb.php" method="POST">
+                    <form action="admindb.php" method="POST">
                         <label for="username">Username</label><br>
                         <input type="text" name="username" class="rounded-lg border p-2"><br><br>
                         <label for="email">E-Mail</label><br>
@@ -85,6 +91,10 @@
                         <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </form>
                 </div>
+
+<!-- ---------------------------------Mentor-Signup------------------------------------ -->
+
+                
 
                 <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <p>Form For Mentor</p>

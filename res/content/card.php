@@ -14,12 +14,12 @@
 		<div class="flip-card-inner">
 
 			<div class="flip-card-front">
-				<img src="res/images_/<?php echo $row['image']; ?>">
+				<img src="res/images/<?php echo $row['image']; ?>">
 			</div>
 
 			<div class="flip-card-back">
 				<h2 style="text-align: center"><?php echo $row['name']; ?></h2>
-				<p style="text-align: center"><?php echo $row['title']; ?></p>
+				<!-- <p style="text-align: center"><?php echo $row['title']; ?></p> -->
 				<p style="text-align: center"><?php echo $row['email']; ?></p>
 			</div>
 
