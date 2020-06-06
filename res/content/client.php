@@ -67,11 +67,15 @@
                 Who you are? <br>
                 <select class="mt-2 p-2 rounded-lg" onchange="signup_form_view(this.value)">
                     <option value="">--Select--</option>
-                    <option value="student">A Student</option>
-                    <option value="mentor">A Mentor</option>
+                    <option value="student"><?php $student="A Student";?>A Student</option>
+                    <option value="mentor"><?php $mentor="A Mentor";?>A Mentor</option>
                 </select>
 <!-- ------------------------------Student-Signup-------------------------------------- -->
-                <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
+                <!-- <script type="text/javascript"> -->
+                <?php
+                    if ($student) {
+                ?>
+                    <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
                     <form action="registerdb.php" method="POST">
                         <label for="username">Username</label><br>
@@ -84,12 +88,15 @@
                         <button class="btn btn-primary">Signup</button>
                         <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </form>
-                </div>
+                    </div>
+                <?php 
+                    }
+                ?>
 
 <!-- ---------------------------------Mentor-Signup------------------------------------ -->
-
-                
-
+                <?php
+                    if ($mentor) {
+                ?>          
                 <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <!-- <p>Form For Mentor</p> -->
                     <form action="fileupdate_mentor.php" method="POST">
@@ -105,7 +112,9 @@
                             <input name="password" type="password" class="rounded-lg border p-2"><br><br>
                     </form>
                 </div>
-
+                <?php
+                    }
+                ?>
             </div>
 
         </div>
