@@ -1,0 +1,4 @@
+1. There was too many unwanted files in php mailer so i removed them..
+   PHPMailer is now moved to /res/phpmailer/
+2. Your mail file was using post method so i created a file /mail/tmp.php for testing
+   Just go to /mail/tmp.php run it in browser enter your email and click to submit to test mailing.. 
