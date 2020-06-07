@@ -67,12 +67,16 @@
                 Who you are? <br>
                 <select class="mt-2 p-2 rounded-lg" onchange="signup_form_view(this.value)">
                     <option value="">--Select--</option>
-                    <option value="student"><form action="s-signup.php">A Student</form></option>
-                    <option value="mentor"><form action="m-signup.php"> A Mentor</form></option>
+                    <option value="student">
+                        <form action="s-signup.php">A Student</form>
+                    </option>
+                    <option value="mentor">
+                        <form action="m-signup.php"> A Mentor</form>
+                    </option>
                 </select>
-<!-- ------------------------------Student-Signup-------------------------------------- -->
-                
-                    <!-- <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
+                <!-- ------------------------------Student-Signup-------------------------------------- -->
+
+                <div id="student-signup" class="p-2 mt-3 border" style="display:none;">
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
                     <form action="registerdb.php" method="POST">
                         <label for="username">Username</label><br>
@@ -85,25 +89,25 @@
                         <button class="btn btn-primary">Signup</button>
                         <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </form>
-                    </div> -->
-                
-<!-- ---------------------------------Mentor-Signup------------------------------------ -->
-                          
+                </div>
+
+                <!-- ---------------------------------Mentor-Signup------------------------------------ -->
+
                 <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <form action="fileupdate_mentor.php" method="POST">
-                            <label for="username">Username</label><br>
-                            <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
-                            <label for="image" id="img">Image</label><br>
-                            <input type="text" required name="image" id="validation" class="rounded-lg border p-2"><br><br>
-                            <label for="age">Age</label><br>
-                            <input type="text" required name="age" id="validation" class="rounded-lg border p-2"><br><br>
-                            <label for="resume" id="cv">Resume</label><br>
-                            <input type="text" required name="resume" id="validation" class="rounded-lg border p-2"><br><br>
-                            <label for="password">Password</label><br>
-                            <input name="password" type="password" class="rounded-lg border p-2"><br><br>
+                        <label for="username">Username</label><br>
+                        <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
+                        <label for="image" id="img">Image</label><br>
+                        <input type="text" required name="image" id="validation" class="rounded-lg border p-2"><br><br>
+                        <label for="age">Age</label><br>
+                        <input type="text" required name="age" id="validation" class="rounded-lg border p-2"><br><br>
+                        <label for="resume" id="cv">Resume</label><br>
+                        <input type="text" required name="resume" id="validation" class="rounded-lg border p-2"><br><br>
+                        <label for="password">Password</label><br>
+                        <input name="password" type="password" class="rounded-lg border p-2"><br><br>
                     </form>
                 </div>
-                
+
             </div>
 
         </div>
