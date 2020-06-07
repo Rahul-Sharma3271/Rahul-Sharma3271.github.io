@@ -60,7 +60,7 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
       $mail->SMTPAuth = true;
       $mail->SMTPDebug = 1;
       $mail->Username = "rahul11sharma1999@gmail.com"; // Enter your email here
-      $mail->Password = "rahul11sharma4216"; //Enter your password here
+      $mail->Password = "zhbptmmevowzaffr"; //Enter your password here
       $mail->IsHTML(true);
       $mail->setFrom("rahul11sharma1999@gmail.com", "ITI-Manager");
       $mail->Subject = $subject;
