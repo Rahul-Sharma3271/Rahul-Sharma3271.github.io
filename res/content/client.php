@@ -36,7 +36,7 @@
                             <button class="btn btn-primary">Login</button>
                             <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         </form><br>
-                        Forgot Password? <a href="mail/index.php">Click here</a>
+                        Forgot Password? <a href="mail/tmp.php">Click here</a>
                     </div>
                     <div style="width:10
                     
@@ -67,14 +67,10 @@
                 Who you are? <br>
                 <select class="mt-2 p-2 rounded-lg" onchange="signup_form_view(this.value)">
                     <option value="">--Select--</option>
-                    <option value="student">
-                        <form action="s-signup.php">A Student</form>
-                    </option>
-                    <option value="mentor">
-                        <form action="m-signup.php"> A Mentor</form>
-                    </option>
+                    <option value="student"> A Student </option>
+                    <option value="mentor"> A Mentor </option>
                 </select>
-                <!-- ------------------------------Student-Signup-------------------------------------- -->
+                <!-- ------------------------------Student-Signup---------------------------------------->
 
                 <div id="student-signup" class="p-2 mt-3 border" style="display:none;">
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
