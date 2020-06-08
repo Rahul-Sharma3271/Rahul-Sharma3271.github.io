@@ -6,7 +6,7 @@
     <title>Testing</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="index.php?action=send-otp" method="post">
         <input type="email" name="email">
         <input type="submit" value="submit">
     </form>
