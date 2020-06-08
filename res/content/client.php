@@ -94,11 +94,11 @@
                         <label for="username">Username</label><br>
                         <input type="text" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
                         <label for="image" id="img">Image</label><br>
-                        <input type="text" required name="image" id="validation" class="rounded-lg border p-2"><br><br>
+                        <input type="text" required name="image" id="validation" class="rounded-lg border p-2">&nbsp;<a href="fileupdate_mentor.php"><input type="submit" name="" value="Upload"></a><br><br>
                         <label for="age">Age</label><br>
-                        <input type="text" required name="age" id="validation" class="rounded-lg border p-2"><br><br>
+                        <input type="text" required name="age" id="validation" class="rounded-lg border p-2">&nbsp;<a href="fileupdate_mentor.php"><input type="submit" name="" value="Upload"><br><br>
                         <label for="resume" id="cv">Resume</label><br>
-                        <input type="text" required name="resume" id="validation" class="rounded-lg border p-2"><br><br>
+                        <input type="text" required name="resume" id="validation" class="rounded-lg border p-2">&nbsp;<a href="fileupdate_mentor.php"><input type="submit" name="" value="Upload"><br><br>
                         <label for="password">Password</label><br>
                         <input name="password" type="password" class="rounded-lg border p-2"><br><br>
                     </form>
