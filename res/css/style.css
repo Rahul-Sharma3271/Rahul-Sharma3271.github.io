@@ -184,13 +184,15 @@ body {
 }
 
 /*-----------------------------------------Tool-Tip-------------------------------------*/
-.tooltip {
+
+/*
+.tooltip2 {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
 }
-
-.tooltip .tooltiptext {
+*/
+.tooltip2 {
   visibility: hidden;
   width: 120px;
   background-color: black;
@@ -199,11 +201,15 @@ body {
   border-radius: 6px;
   padding: 5px 0;
 
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
 }
-
+/*
 .tooltip:click .tooltiptext {
   visibility: visible;
+}
+*/
+
+input:focus + .tooltip2{
+	visibility: visible;
 }

@@ -18,7 +18,7 @@
 
 <!-- ---------------------------------Log-In------------------------------------------- -->
 
-<div id="loginModal" class="modal fade" style="top:20%;" role="dialog">
+<div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -31,11 +31,11 @@
                     <div>
                         <form action="logindb.php" method="POST">
                             <label for="username">Username</label><br>
-                            <input type="text" pattern="[a-zA-Z0-9_]{4,}" required name="username" id="validation" class="rounded-lg border p-2"><br><br>
-                            <p>Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p>
+                            <input type="text" pattern="[a-zA-Z0-9_]{4,}" required name="username" id="validation" class="rounded-lg border p-2">
+                            <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p><br><br>
                             <label for="password">Password</label><br>
-                            <input name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="rounded-lg border p-2" required><br><br>
-                            <p>Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
+                            <input name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="rounded-lg border p-2" required>
+                            <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p><br><br>
                             <button class="btn btn-primary">Login</button>
                             <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         </form><br>
@@ -79,13 +79,14 @@
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
                     <form action="registerdb.php" method="POST">
                         <label for="username">Username</label><br>
-                        <input type="text" pattern="[a-zA-Z0-9_]{4,}" name="username" class="rounded-lg border p-2"><br><br>
-                        <p>Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p>
+                        <input type="text" pattern="[a-zA-Z0-9_]{4,}" name="username" class="rounded-lg border p-2">
+                        <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p>
+                        <br><br>
                         <label for="email">E-Mail</label><br>
                         <input name="email" type="email" class="rounded-lg border p-2"><br><br>
                         <label for="password">Password</label><br>
                         <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2">
-                        <p>Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
+                        <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
                         
                         <br><br>
                         <button class="btn btn-primary">Signup</button>
@@ -98,8 +99,8 @@
                 <div id="mentor-signup" class="p-2 mt-3 border" style="display:none;">
                     <form action="fileupdate_mentor.php" method="POST">
                         <label for="username">Username</label><br>
-                        <input type="text" required name="username" pattern="[a-zA-Z0-9_]{4,}" id="validation" class="rounded-lg border p-2"><br><br>
-                        <p>Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p>
+                        <input type="text" required name="username" pattern="[a-zA-Z0-9_]{4,}" id="validation" class="rounded-lg border p-2">
+                        <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p><br><br>
                         <label for="image" id="img">Image</label><br>
                         <input type="file" accept="image/png,image/jpeg" required name="image" id="validation" class="rounded-lg border p-2"><br><br>
                         <label for="age">Age</label><br>
@@ -109,8 +110,8 @@
                         <label for="resume" id="cv">Resume</label><br>
                         <input type="file" accept="application/pdf,image/png,image/jpeg" required name="resume" id="validation" class="rounded-lg border p-2"><br><br>
                         <label for="password">Password</label><br>
-                        <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2"><br><br>
-                        <p>Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
+                        <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2">
+                        <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p><br><br>
                     </form>
                 </div>
 
