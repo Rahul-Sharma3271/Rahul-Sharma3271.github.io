@@ -32,25 +32,25 @@
     }
 </style>
 <div class="profile-card">
-    <div>
-        <img src="<?php //url to image from backend ?>" alt="Profile Picture" class="profile-img"><br>
-        <button class="btn btn-success btn-sm" onclick="//backend here">Change Photo</button>
-    </div>
-    <div>
     	<?php
     		$sql= "SELECT * from studentsignup";
     		$res= mysqli_query($conn, $sql);
     		while ($row= mysqli_fetch_assoc($res)) {
     	?>
+    <div>
+        <img src="<?php echo $row['image'];//url to image from backend ?>" alt="Profile Picture" class="profile-img"><br>
+        <button class="btn btn-success btn-sm" onclick="<?php $var="ALTER TABLE where ";?>//backend here">Change Photo</button>
+    </div>
+    <div>
         <h3><?php echo $row['name']; //name ?></h3>
         Username: <?php echo $row['username'];//username ?><br>
         Email: <?php echo $row['email'];//Email ?>
         Contact No. <?php echo $row['contact'];//Phone ?>
+    </div>
+</div>
     <?php
     	}
     ?>
-    </div>
-</div>
 <div>
     <table>
         <th>SNo.</th>
