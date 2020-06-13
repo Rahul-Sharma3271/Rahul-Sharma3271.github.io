@@ -79,11 +79,11 @@
                     <img src="res/icons/rregister.png" width="80px" alt="Login">
                     <form action="registerdb.php" method="POST">
                         <label for="username">Username</label><br>
-                        <input type="text" pattern="[a-zA-Z0-9_]{4,}" name="username" class="rounded-lg border p-2">
+                        <input type="text" pattern="[a-zA-Z0-9_]{4,}" name="username" class="rounded-lg border p-2" required>
                         <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p>
                         <br><br>
                         <label for="email">E-Mail</label><br>
-                        <input name="email" type="email" class="rounded-lg border p-2"><br><br>
+                        <input name="email" type="email" class="rounded-lg border p-2" required><br><br>
                         <label for="password">Password</label><br>
                         <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2">
                         <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
