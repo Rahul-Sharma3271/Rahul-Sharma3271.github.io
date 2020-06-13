@@ -8,3 +8,12 @@
    So.... i was unable to write any query for your code
    
 4. OTP will be generated and validated by my code and you just have to write your queries where i commented for that. 
+
+5.created studentsignup.php to insert values into database, but not getting what's wrong  with it.
+it's not entering values to database..
+
+6. student.php me onclick ke age kya code ayega vo complete krdo
+
+7. client.php pr student signup and mentor signup dono me contact k lie min and max length set krni h k 10 digits ka contact no. he accept kre.
+
+8. subh breakfast krke call krio ek bari mujhe.
