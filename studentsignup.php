@@ -1,5 +1,6 @@
 <?php
 include_once "res/content/main.php"; 
+	$conn = mysqli_connect('localhost','root','','iti') or die('TRY TO RECONNECT!');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uname = $_POST['username'];
 	$name = $_POST['name'];

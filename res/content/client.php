@@ -87,7 +87,7 @@
                         <label for="email">E-Mail</label><br>
                         <input name="email" type="email" class="rounded-lg border p-2" required><br><br>
                         <label for="contact">Contact No.</label><br>
-                        <input type="number" name="contact" max="999999999" min="100000000" class="rounded-lg border p-2" required><br><br>
+                        <input type="number" name="contact" class="rounded-lg border p-2" required><br><br>
                         <label for="password">Password</label><br>
                         <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2">
                         <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>

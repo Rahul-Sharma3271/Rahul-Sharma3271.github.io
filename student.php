@@ -37,9 +37,18 @@
         <button class="btn btn-success btn-sm" onclick="//backend here">Change Photo</button>
     </div>
     <div>
-        <h3><?php echo "Name"; //name ?></h3>
-        Username: <?php //username ?><br>
-        Phone No. <?php //Phone ?>
+    	<?php
+    		$sql= "SELECT * from studentsignup";
+    		$res= mysqli_query($conn, $sql);
+    		while ($row= mysqli_fetch_assoc($res)) {
+    	?>
+        <h3><?php echo $row['name']; //name ?></h3>
+        Username: <?php echo $row['username'];//username ?><br>
+        Email: <?php echo $row['email'];//Email ?>
+        Contact No. <?php echo $row['contact'];//Phone ?>
+    <?php
+    	}
+    ?>
     </div>
 </div>
 <div>
