@@ -9,8 +9,6 @@
    
 4. OTP will be generated and validated by my code and you just have to write your queries where i commented for that. 
 
----------------------------------------------------------------------------
-
 5.created studentsignup.php to insert values into database, but not getting what's wrong  with it.
 it's not entering values to database..
 
@@ -20,4 +18,14 @@ it's not entering values to database..
 
 8. subh breakfast krke call krio ek bari mujhe.
 
-----------------------------------------------------------------
+----------------------------
+June 14 2020 2:02 PM
+----------------------------
+1. Contact No. Fixed in both SignUp's
+2. Fixed Student Signup not working
+3. Student.php added Fully functional Change Profile Picture
+   As i didn't knew where you are storing profile pics of students so i created a folder 'students' to store profile pics.
+   There is a default profile pic named 'profile.jpg'.
+   In student.php you must have to provide email of current user to my code in order to get it working.
+4. Update your database asap by new sql.
+   Drop current iti before importing it.

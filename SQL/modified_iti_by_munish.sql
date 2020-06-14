@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2020 at 08:31 AM
+-- Generation Time: Jun 14, 2020 at 01:59 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -114,7 +115,7 @@ INSERT INTO `hcard` (`id`, `image`, `name`, `about`, `email`, `subject`, `contac
 (5, 'ruchikakashyap.jpeg', 'Miss.Ruchika Kashyap', 'Miss.Ruchika Kashyap is much experienced in Languages. With much clarity regarding all of it\'s topics. She is also much handy with their usage too. It\'s her passion to teach the languages(Hindi,Punjabi) with full Enthusiasm. \r\n', 'ruchikakashyap4573@gmail.com', 'Hindi,Punjabi', 8544885491),
 (6, 'adityakashyap.jpeg', 'Mr.Aditya Kashyap', 'Mr.Aditya Kashyap is much experienced in English & Social-Science. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to learn-teach and keeping himself updated with all Social-Science updates. \r\n', 'adityakashyap775@gmail.com', 'English,Social-Science', 0),
 (7, 'tusharparkash.jpeg', 'Mr.Tushar Parkash', 'Mr.Tushar Parkash is much experienced in Marketing. With much clarity regarding all of it\'s topics. He is also much handy with their usage & implementation too. It\'s his passion to work on Marketing and keeping himself updated with all of it\'s updates. \r\nHe also has hobby to implement all the Marketing Techniques and ideas and make improvements in the existing and implemented ideas.', 'tusharparkash7@gmail.com', 'Marketing', 7696067860),
-(8, 'munishkumar.jpeg', 'Mr.Munisha Kumar', 'Mr.Munisha Kumar  is much experienced in Java-Script & Jquery. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to work on Java-Script and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of Web-Application Development. Being a hobby, he keeps on finding out more and more new and creative ideas for App-Development.', 'mk6229478@gmail.com', 'Jquery,Java-Script', 7814625194);
+(8, 'munishkumar.jpeg', 'Mr. Munish Kumar', 'Mr. Munish Kumar  is much experienced in Java-Script & Jquery. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to work on Java-Script and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of Web-Application Development. Being a hobby, he keeps on finding out more and more new and creative ideas for App-Development.', 'mk6229478@gmail.com', 'Jquery,Java-Script', 7814625194);
 
 -- --------------------------------------------------------
 
@@ -195,8 +196,24 @@ INSERT INTO `staff` (`sid`, `name`, `subject`) VALUES
 (20, 'Mr.Rahul Sharma', 'Web Technology'),
 (21, 'Mr.Damanpreet Singh', 'Software Engineering'),
 (22, 'Mr.Tushar Parkash', 'Business Management&Marketing'),
-(23, 'Mr.Munisha Kumar', 'Java Script'),
-(24, 'Mr.Munisha Kumar', 'Jquery');
+(23, 'Mr. Munish Kumar', 'Java Script'),
+(24, 'Mr. Munish Kumar', 'Jquery');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `contact` int(11) NOT NULL,
+  `password` text NOT NULL,
+  `picture` text NOT NULL DEFAULT 'profile.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -215,9 +232,9 @@ CREATE TABLE `teachers` (
 
 INSERT INTO `teachers` (`id`, `name`) VALUES
 (5, 'Miss.Ruchika Kashyap'),
+(8, 'Mr. Munish Kumar'),
 (6, 'Mr.Aditya Kashyap'),
 (1, 'Mr.Damanpreet Singh'),
-(8, 'Mr.Munisha Kumar'),
 (4, 'Mr.Rahul Sharma'),
 (2, 'Mr.Rishabh Grewal'),
 (7, 'Mr.Tushar Parkash'),
@@ -272,6 +289,13 @@ ALTER TABLE `staff`
   ADD KEY `subject` (`subject`);
 
 --
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`,`email`) USING HASH;
+
+--
 -- Indexes for table `teachers`
 --
 ALTER TABLE `teachers`
@@ -317,6 +341,12 @@ ALTER TABLE `registerdb`
 --
 ALTER TABLE `staff`
   MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `students`
+--
+ALTER TABLE `students`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `teachers`
