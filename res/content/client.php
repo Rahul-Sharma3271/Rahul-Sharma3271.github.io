@@ -87,7 +87,7 @@
                         <label for="email">E-Mail</label><br>
                         <input name="email" type="email" class="rounded-lg border p-2" required><br><br>
                         <label for="contact">Contact No.</label><br>
-                        <input type="number" name="contact" class="rounded-lg border p-2" required><br><br>
+                        <input type="tel" pattern="^[0-9]{10}$" maxlength="10" name="contact" class="rounded-lg border p-2" required><br><br>
                         <label for="password">Password</label><br>
                         <input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="rounded-lg border p-2">
                         <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p>
@@ -113,8 +113,10 @@
                         <input type="number" required name="age" id="validation" class="rounded-lg border p-2"><br><br>
                         <label for="email">E-Mail</label><br>
                         <input name="email" type="email" class="rounded-lg border p-2" required><br><br>
+
                         <label for="contact">Contact No.</label><br>
-                        <input type="number" name="contact" max="9999999999" min="1000000000" class="rounded-lg border p-2" required><br><br>
+                        <input type="tel" pattern="^[0-9]{10}$"  maxlength="10" name="contact" class="rounded-lg border p-2" required><br><br>
+
                         <label for="resume" id="cv">Resume</label><br>
                         <input type="file" accept="application/pdf,image/png,image/jpeg" required name="resume" id="validation" class="rounded-lg border p-2"><br><br>
                         <label for="password">Password</label><br>
