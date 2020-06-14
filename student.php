@@ -51,7 +51,7 @@ if(array_key_exists("changePicture", $_POST)){
     <div>
         <img src="res/icons/profile.jpg<?php //echo $row['image'];//url to image from backend ?>" alt="Profile Picture" class="profile-img"><br>
         <button class="btn btn-success btn-sm" onclick="this.nextElementSibling.classList.toggle('d-none')">Change Photo</button>
-        <form method="post" enctype="multipart/form-data" class="border p-3 m-1 bg-light d-none" style="position: absolute;">
+        <form method="post" enctype="multipart/form-data" class="border p-3 m-2 bg-light d-none" style="position: absolute;box-shadow:0 2px 4px 2px rgba(0,0,0,0.3);border-radius:6px;">
             <label for="picture" class="btn-dark btn-sm">Upload Photo</label>
             <input style="display:none" type="file" id="picture" name="pic" accept="image/*" required><br>
             <button type="Submit" name="changePicture" class=" btn btn-sm btn-success">Change</button>
