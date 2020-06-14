@@ -12,7 +12,7 @@
 			$uname = $_POST['username'];
 			$pwd = $_POST['password'];
 			// echo "ooo";
-			$sql = "SELECT * FROM students WHERE username='$uname' AND password='$pwd'";
+			$sql = "SELECT * FROM mentors WHERE username='$uname' AND password='$pwd'";
 
 			$result = mysqli_query($conn, $sql); 
 			$status = mysqli_num_rows($result); //true for 1, false for 0 or 2

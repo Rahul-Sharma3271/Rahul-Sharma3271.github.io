@@ -29,3 +29,6 @@ June 14 2020 2:02 PM
    In student.php you must have to provide email of current user to my code in order to get it working.
 4. Update your database asap by new sql.
    Drop current iti before importing it.
+
+----------------------------------
+1. login krra hu to hr time bol rhe h k, username or password is invalid, though, in logindb.php, I've changed the table name too.

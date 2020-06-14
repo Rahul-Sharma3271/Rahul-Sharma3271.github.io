@@ -28,8 +28,17 @@
             </div>
             <div class="modal-body p-3">
                 <div style="display: flex; flex-direction: row;">
+
+                <div class="modal-body px-5 py-3">
+                Who you are? <br>
+                <select class="mt-2 p-2 rounded-lg" onchange="signup_form_view(this.value)">
+                    <option value="">--Select--</option>
+                    <option value="student"> A Student </option>
+                    <option value="mentor"> A Mentor </option>
+                </select>
+<!-- -------------------------Student-Login------------------------------------------ -->
                     <div>
-                        <form action="logindb.php" method="POST">
+                        <form action="slogindb.php" method="POST">
                             <label for="username">Username</label><br>
                             <input type="text" pattern="[a-zA-Z0-9_]{4,}" required name="username" id="validation" class="rounded-lg border p-2">
                             <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p><br><br>
@@ -41,6 +50,22 @@
                         </form><br>
                         Forgot Password? <a href="mail/index.php">Click here</a>
                     </div>
+<!-- --------------------------------Mentor-Login-------------------------------------- -->
+                <div>
+                        <form action="mlogindb.php" id="mentor-login" method="POST">
+                            <label for="username">Username</label><br>
+                            <input type="text" pattern="[a-zA-Z0-9_]{4,}" required name="username" id="validation" class="rounded-lg border p-2">
+                            <p class="tooltip2">Must contain 4 characters.Upper-lowercase letters, digits and underscore(_) can be used.</p><br><br>
+                            <label for="password">Password</label><br>
+                            <input name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="rounded-lg border p-2" required>
+                            <p class="tooltip2">Must contain atleast one digit and one upper-lowercase letter,atleast 8 digit long.</p><br><br>
+                            <button class="btn btn-primary">Login</button>
+                            <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </form><br>
+                        Forgot Password? <a href="mail/index.php">Click here</a>
+                    </div>
+
+                </div>
                     <div style="width:10
                     
                     0%;display: flex;align-items: center; justify-content: center;">
