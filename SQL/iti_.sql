@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2020 at 04:20 PM
+-- Generation Time: Jun 14, 2020 at 08:31 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -96,24 +96,25 @@ CREATE TABLE `hcard` (
   `id` int(11) NOT NULL,
   `image` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `title` varchar(100) NOT NULL,
+  `about` longtext NOT NULL,
   `email` varchar(50) NOT NULL,
-  `subject` varchar(50) NOT NULL
+  `subject` varchar(50) NOT NULL,
+  `contact` bigint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `hcard`
 --
 
-INSERT INTO `hcard` (`id`, `image`, `name`, `title`, `email`, `subject`) VALUES
-(1, 'damanpreetsingh.JPEG', 'Mr.Damanpreet Singh', '', 'damanpreet666636@gmail.com', 'MySql,+1&2 Mathematics,Banking-Exams'),
-(2, 'rishabh.jpeg', 'Mr.Rishabh Grewal', '', 'rishabhpalia000@gmail.com', 'DBMS,+1&2 Mathematics,Digital-Electronics'),
-(3, 'vishal.png', 'Mr.Vishal Kakkar', '', 'krishna.kakkar77@gmail.com', 'C,C++,JAVA,PHP'),
-(4, 'rahulsharma.jpeg', 'Mr.Rahul Sharma', '', 'rahul11sharma1999@gmail.com', 'PCM,Web-Technology,Quantitative-Aptitude'),
-(5, 'ruchikakashyap.jpeg', 'Miss.Ruchika Kashyap', '', 'ruchikakashyap4573@gmail.com', 'Hindi,Punjabi'),
-(6, 'adityakashyap.jpeg', 'Mr.Aditya Kashyap', '', 'adityakashyap775@gmail.com', 'English,Social-Science'),
-(7, 'tusharparkash.jpeg', 'Mr.Tushar Parkash', '', 'tusharparkash7@gmail.com', 'Marketing'),
-(8, 'munishkumar.jpeg', 'Mr.Munisha Kumar', '', 'mk6229478@gmail.com', 'Jquery,Java-Script');
+INSERT INTO `hcard` (`id`, `image`, `name`, `about`, `email`, `subject`, `contact`) VALUES
+(1, 'damanpreetsingh.JPEG', 'Mr.Damanpreet Singh', 'Mr.Damanpreet Singh is much experienced in My-Sql. With much clarity regarding all of it\'s commands. He is also much handy with their usage too. It\'s his passion to work on My-Sql and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of solving +1&2 Mathematics and Banking Exams questions too. Being a hobby, he keeps on finding out more and more new and easy tricks to solve all these Questions.', 'damanpreet666636@gmail.com', 'MySql,+1&2 Mathematics,Banking-Exams', 7696938896),
+(2, 'rishabh.jpeg', 'Mr.Rishabh Grewal', 'Mr.Rishabh Grewal is much experienced in Digital-Electronics & DBMS. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to work on Digital-Electronics and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of solving +1&2 Mathematics. Being a hobby, he keeps on finding out more and more new and easy tricks to solve all these Questions.', 'rishabhpalia000@gmail.com', 'DBMS,+1&2 Mathematics,Digital-Electronics', 9592012104),
+(3, 'vishal.png', 'Mr.Vishal Kakkar', 'Mr.Vishal Kakkar is much experienced in Basic Programming languages. With much clarity regarding all of it\'s functions. He is also much handy with their usage too. It\'s his passion to work on Programming languages like: \"C, C++, Java\", and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of working on PHP. Being a hobby, he keeps on finding out more and more new and easy tricks to deal with it\'s functionality.', 'krishna.kakkar77@gmail.com', 'C,C++,JAVA,PHP', 8283842692),
+(4, 'rahulsharma.jpeg', 'Mr.Rahul Sharma', 'Mr.Rahul Sharma is much experienced in Web-Technology. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to work on Web-Technology and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of solving +1&2 PCM. Being a hobby, he keeps on finding out more and more new and easy tricks to solve all these Questions. He\'s also keen of solving Quantitative Aptitude, with much interesting and easy tricks to crack them.', 'rahul11sharma1999@gmail.com', 'PCM,Web-Technology,Quantitative-Aptitude', 6239461546),
+(5, 'ruchikakashyap.jpeg', 'Miss.Ruchika Kashyap', 'Miss.Ruchika Kashyap is much experienced in Languages. With much clarity regarding all of it\'s topics. She is also much handy with their usage too. It\'s her passion to teach the languages(Hindi,Punjabi) with full Enthusiasm. \r\n', 'ruchikakashyap4573@gmail.com', 'Hindi,Punjabi', 8544885491),
+(6, 'adityakashyap.jpeg', 'Mr.Aditya Kashyap', 'Mr.Aditya Kashyap is much experienced in English & Social-Science. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to learn-teach and keeping himself updated with all Social-Science updates. \r\n', 'adityakashyap775@gmail.com', 'English,Social-Science', 0),
+(7, 'tusharparkash.jpeg', 'Mr.Tushar Parkash', 'Mr.Tushar Parkash is much experienced in Marketing. With much clarity regarding all of it\'s topics. He is also much handy with their usage & implementation too. It\'s his passion to work on Marketing and keeping himself updated with all of it\'s updates. \r\nHe also has hobby to implement all the Marketing Techniques and ideas and make improvements in the existing and implemented ideas.', 'tusharparkash7@gmail.com', 'Marketing', 7696067860),
+(8, 'munishkumar.jpeg', 'Mr.Munisha Kumar', 'Mr.Munisha Kumar  is much experienced in Java-Script & Jquery. With much clarity regarding all of it\'s topics. He is also much handy with their usage too. It\'s his passion to work on Java-Script and keeping himself updated with all of it\'s updates. \r\nHe also has hobby of Web-Application Development. Being a hobby, he keeps on finding out more and more new and creative ideas for App-Development.', 'mk6229478@gmail.com', 'Jquery,Java-Script', 7814625194);
 
 -- --------------------------------------------------------
 
@@ -122,32 +123,38 @@ INSERT INTO `hcard` (`id`, `image`, `name`, `title`, `email`, `subject`) VALUES
 --
 
 CREATE TABLE `registerdb` (
-  `rid` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `uname` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registerdb`
 --
 
-INSERT INTO `registerdb` (`rid`, `uname`, `password`) VALUES
-(1, 'abc', '1234'),
-(2, 'aa', '1234'),
-(3, 'vishal', '1234'),
-(4, 'daman', '1234'),
-(5, 'ruchika', '1234'),
-(6, 'piyusha', '1234'),
-(7, 'khushboo', '1234'),
-(8, 'diksha', '1234'),
-(9, 'renuka', '1234'),
-(10, 'neel', '1234'),
-(11, 'anuj', '1234'),
-(12, 'kashish', '1234'),
-(13, 'anand', '1234'),
-(14, 'saravdeep', '1234'),
-(15, 'hemant', '1234'),
-(16, 'bohra', '1234');
+INSERT INTO `registerdb` (`id`, `uname`, `password`, `email`) VALUES
+(1, 'abc', '1234', ''),
+(2, 'aa', '1234', ''),
+(3, 'vishal', '1234', ''),
+(4, 'daman', '1234', ''),
+(5, 'ruchika', '1234', ''),
+(6, 'piyusha', '1234', ''),
+(7, 'khushboo', '1234', ''),
+(8, 'diksha', '1234', ''),
+(9, 'renuka', '1234', ''),
+(10, 'neel', '1234', ''),
+(11, 'anuj', '1234', ''),
+(12, 'kashish', '1234', ''),
+(13, 'anand', '1234', ''),
+(14, 'saravdeep', '1234', ''),
+(15, 'hemant', '1234', ''),
+(16, 'bohra', '1234', ''),
+(17, 'fgh', '12354', 'rm2516149@gmail.com'),
+(18, 'New1', 'New12345', 'new@gmail.com'),
+(19, 'new1', 'New12345', 'new@gmail.com'),
+(20, 'new1', 'New12345', 'new@gmail.com'),
+(21, 'new1', 'New12345', 'new@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -245,14 +252,16 @@ ALTER TABLE `courses`
 ALTER TABLE `hcard`
   ADD PRIMARY KEY (`id`),
   ADD KEY `name` (`name`),
-  ADD KEY `subject` (`subject`);
+  ADD KEY `subject` (`subject`),
+  ADD KEY `contact` (`contact`);
 
 --
 -- Indexes for table `registerdb`
 --
 ALTER TABLE `registerdb`
-  ADD PRIMARY KEY (`rid`),
-  ADD KEY `uname` (`uname`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `uname` (`uname`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `staff`
@@ -301,7 +310,7 @@ ALTER TABLE `hcard`
 -- AUTO_INCREMENT for table `registerdb`
 --
 ALTER TABLE `registerdb`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `staff`
