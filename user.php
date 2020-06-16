@@ -366,11 +366,12 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
 
     <?php
     include_once "res/com/footer.html";
-
+    
     if ($_GET['action'] == 'admin')
         $exe = "view(['admin'])";
     ?>
     <script>
+view(['student-login']);
         <?php echo $exe; ?>
     </script>
 </body>
