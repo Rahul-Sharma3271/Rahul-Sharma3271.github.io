@@ -22,7 +22,7 @@
 
 ------Admin Account-----
 
-1.  username: munish
+1.  username: rahulsharma
     password: 1234
 
 
