@@ -13,6 +13,9 @@
 8. Each and every element is re-designed in ITI_NEW.
 9. Every single Page is re-designed.
 
+10. View Resume will not work for current teachers as there are no resumes for them.
+    View resume will work for "sample_teacher" as there was a resume uploaded for him.
+
 
 *********************** Accounts **********************
 
