@@ -1,10 +1,17 @@
 ------------------Getting Started with New ITI--------------------
 
 
-*********************** Database Setup *****************
+*********************** Setup *****************
 
-1. Create a database "iti_new"
-2. import "/admin/bin/iti_new.sql"
+1. Create a database "iti_new".
+2. import "/admin/bin/iti_new.sql".
+3. Don't change any file or any table/Database name before being sure.
+4. All Passwords are encrypted with high security 256-bit secured encryption and can't be modified manually.
+5.  Only Approved Teachers will show in Staff.php Page.
+6.  Only Admin can assign courses to Teachers and add them from Admin Pannel.
+7. This coding is highly effecient than before.
+8. Each and every element is re-designed in ITI_NEW.
+9. Every single Page is re-designed.
 
 
 *********************** Accounts **********************
@@ -51,11 +58,6 @@
     password: 1234
 
 
-
-************************** Notes ***************************
-
-1.  Only Approved Teachers will show in Staff.php Page
-2.  Only Admin can assign courses to Teachers and add them from Admin Console
 
 *************************** Rights ***********************
 
