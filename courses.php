@@ -1,38 +1,34 @@
-<?php
-	include_once "res/content/main.php";
-	session_start();
-?>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="m-4">
-	<table style="border:8px solid #060042;" class="table w-100 my-4 text-center">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php include_once "res/com/main.html"; ?>
+	<title>Courses - Invention to Inovation</title>
+</head>
+
+<body>
+	<?php
+	include_once "res/com/header.html";
+	include_once "res/com/conn.php";
+	$result = mysqli_query($conn, "SELECT * FROM `courses`");
+	?>
+	<br>
+	<h3 class="text-center">All Courses</h3>
+	<div style="margin:10px 10%;">
+	<table>
+		<th>Course</th>
+		<th>Teacher Name</th>
+	<?php while ($row = mysqli_fetch_assoc($result)) { ?>
 		<tr>
-			<th><b><i>SUBJECT</i></b></th>
-			<th><b><i>MENTORS</i></b></th>
-			<!-- <th><b><i>DETAILS</i></b></th> -->
+			<td><?php echo $row["name"];?></td>
+			<td><?php echo $row["teacher"];?></td>
 		</tr>
-		<tr>
-			<?php 
-				$sql="SELECT * from `staff` ";
-				$res=mysqli_query($conn,$sql);
-				while ($row=mysqli_fetch_assoc($res)){
-			?>
-			<td>
-				<?php echo $row['subject']; ?>
-			</td>
-			<td>
-				<a class="btn btn-success" href="mentor_about.php?name=<?php echo $row["name"];?>">
-					<?php echo $row["name"]?>
-				</a>
-			</td>
-		</tr>
-		<?php } ?>
+	<?php } ?>
 	</table>
-</div>
-
-<?php
-	include_once "res/content/footer.php";
-?>
-
+	</div>
+	<?php include_once "res/com/footer.html"; ?>
 </body>
 
 </html>
