@@ -63,18 +63,27 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
         $marks = $_POST['marks'];
         $attendance = $_POST['attendance'];
         $teacher = $data['username'];
-        if(mysqli_query($conn,"INSERT INTO `test`(`date`,`teacher`,`student`,`marks`,`attendance`) VALUES('$date','$teacher','$student','$marks','$attendance')")) echo "<div class=\"alert alert-success m-4\">Result Added</div>";
+        if (mysqli_query($conn, "INSERT INTO `test`(`date`,`teacher`,`student`,`marks`,`attendance`) VALUES('$date','$teacher','$student','$marks','$attendance')")) echo "<div class=\"alert alert-success m-4\">Result Added</div>";
         else echo '<div class="alert alert-danger m-4">Something went wrong</div>';
         $exe = "view(['analytics'])";
     } else if (array_key_exists("remove-result", $_POST)) {
         $id = $_POST['id'];
         if (!mysqli_query($conn, "DELETE FROM `test` WHERE `id`='$id'")) echo '<div class="alert alert-danger m-4">Something went wrong</div>';
         $exe = "view(['analytics'])";
-    }  else if (array_key_exists("update-marks", $_POST)) {
+    } else if (array_key_exists("update-marks", $_POST)) {
         $id = $_POST['id'];
         $marks = $_POST['marks'];
         if (!mysqli_query($conn, "UPDATE `test` SET `marks`='$marks' WHERE `id`='$id'")) echo '<div class="alert alert-danger m-4">Something went wrong</div>';
         $exe = "view(['analytics'])";
+    } else if (array_key_exists("tsubmit", $_POST)) {
+        $tid = $_POST['tid'];
+        $amount = $_POST['amount'];
+        $user = $data["username"];
+        $time = date("h:i a");
+        $date = date("d-m-Y");
+        if (mysqli_query($conn, "INSERT INTO `transactions`(`teacher`,`tid`,`amount`,`time`,`date`) VALUES('$user','$tid','$amount','$time','$date')")) echo '<div class="alert alert-success m-4">Done</div>';
+        else echo '<div class="alert alert-danger m-4">Something went wrong</div>';
+        $exe = "view(['payment'])";
     }
     ?>
     <div class="view" id="profile">
@@ -88,6 +97,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
                 <div class="btn-group m-1">
                     <button class="btn btn-success" onclick="view(['edit-profile'])">Edit Profile</button>
                     <button class="btn btn-success" onclick="view(['analytics'])">Analytics</button>
+                    <button class="btn btn-success" onclick="view(['payment'])">Payment</button>
                 </div>
                 <br><br>
                 <div style="font-size: 17px;">
@@ -205,8 +215,32 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
         <?php } else echo "<h4>Only approved Teachers can do this action.</h4>"; ?>
 
     </div>
-
-
+    <div id="payment" class="p-4 view">
+        <button class="btn btn-primary float-right" onclick="view(['profile'])">Back to Profile</button>
+        <br><br>
+        <?php if ($data["approved"]) { ?>
+            <h3>Payment</h3>
+            <br>
+            <br><br>
+            <div class="d-flex flex-wrap mx-3" style="justify-content: space-evenly;">
+                <div class="text-center">
+                    <h4>Scan this QR Code to Pay</h4>
+                    <img src="admin/payment/payment.jpg" alt="Payment" style="max-width:250px;">
+                </div>
+                <div class="mx-3">
+                    <form method="post">
+                        <h4>Submit Payment Record</h4><br>
+                        <label for="tid">Transaction ID / Number</label><br>
+                        <input type="text" name="tid" id="tid" class="border rounded p-1 w-100">
+                        <br><br><label for="amount">Amount</label>
+                        <input type="text" name="amount" id="amount" value="Rs. " class="border rounded p-1 w-100">
+                        <br><br>
+                        <button class="btn btn-primary w-100" name="tsubmit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        <?php } else echo "<h4>Only approved Teachers can do this action.</h4>"; ?>
+    </div>
     <?php include_once "../res/com/footer.html" ?>
 
     <script src="res/js/main.js"></script>

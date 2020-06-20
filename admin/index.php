@@ -95,6 +95,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
+            <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
         <h3>Add Notice</h3>
         <form method="post">
@@ -122,6 +123,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-success">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
+            <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
         <h3>Add Card</h3>
         <form method="post" class="about-card" style="margin:20px 0;" enctype="multipart/form-data">
@@ -159,6 +161,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-success">Teachers</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
+            <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
         <h3>Teachers</h3>
         <br>
@@ -217,6 +220,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
             <button class="btn btn-success">Courses</button>
+            <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
         <h3>Add Course</h3>
         <form method="post">
@@ -252,6 +256,36 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
                             <button type="submit" name="remove-course" class="btn btn-sm btn-danger">Remove</button>
                         </form>
                     </td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
+    <div class="view" id="payment">
+        <div class="btn-group">
+            <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
+            <button class="btn btn-light" onclick="view(['about'])">About</button>
+            <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
+            <button class="btn btn-success">Payments</button>
+        </div><br><br>
+        <h3>Payments</h3>
+        <table>
+            <th>Teacher</th>
+            <th>Transaction ID</th>
+            <th>Amount</th>
+            <th>Time</th>
+            <th>Date</th>
+            <?php
+            $result = mysqli_query($conn, "SELECT * FROM `transactions`");
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?> <tr>
+                    <td><?php echo $row["teacher"]; ?></td>
+                    <td><?php echo $row["tid"]; ?></td>
+                    <td><?php echo $row["amount"]; ?></td>
+                    <td><?php echo $row["time"]; ?></td>
+                    <td><?php echo $row["date"]; ?></td>
                 </tr>
             <?php
             }
