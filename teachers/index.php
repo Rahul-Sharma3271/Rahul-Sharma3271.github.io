@@ -84,6 +84,26 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
         if (mysqli_query($conn, "INSERT INTO `transactions`(`teacher`,`tid`,`amount`,`time`,`date`) VALUES('$user','$tid','$amount','$time','$date')")) echo '<div class="alert alert-success m-4">Done</div>';
         else echo '<div class="alert alert-danger m-4">Something went wrong</div>';
         $exe = "view(['payment'])";
+    } else if (array_key_exists("remove-student", $_POST)) {
+        $id = $_POST["id"];
+        if (!mysqli_query($conn, "UPDATE `students` SET `assoc_teacher`=NULL WHERE `id`='$id'")) echo '<div class="alert alert-danger m-4">Something went wrong</div>';
+        $exe = "view(['students'])";
+    } else if (array_key_exists("add-student", $_POST)) {
+        $username = $_POST['username'];
+        $teacher = $data['username'];
+        if (mysqli_num_rows(mysqli_query($conn, "SELECT `username` FROM `students` WHERE username='$username'")) < 1) {
+            echo '<div class="alert alert-danger m-4">No student exist with username</div>';
+        } else {
+            if (mysqli_fetch_assoc(mysqli_query($conn, "SELECT `assoc_teacher` FROM `students` WHERE `username`='$username'"))['assoc_teacher'] !== NULL) {
+                echo '<div class="alert alert-warning m-4">This student is already  associated to another teacher</div>';
+            } else {
+                if(mysqli_query($conn,"UPDATE `students` SET `assoc_teacher`='$teacher' WHERE `username`='$username'")){
+                    echo '<div class="alert alert-success m-4">Student Added Successfully.</div>';
+                }
+                else echo '<div class="alert alert-danger m-4">Something went wrong.</div>';
+            }
+        }
+        $exe = "view(['students'])";
     }
     ?>
     <div class="view" id="profile">
@@ -98,6 +118,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
                     <button class="btn btn-success" onclick="view(['edit-profile'])">Edit Profile</button>
                     <button class="btn btn-success" onclick="view(['analytics'])">Analytics</button>
                     <button class="btn btn-success" onclick="view(['payment'])">Payment</button>
+                    <button class="btn btn-success" onclick="view(['students'])">Students</button>
                 </div>
                 <br><br>
                 <div style="font-size: 17px;">
@@ -111,7 +132,6 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
             </div>
         </div>
     </div>
-
     <div class="view" id="edit-profile">
         <button class="btn btn-primary float-right" onclick="view(['profile'])">Back to Profile</button>
         <br><br>
@@ -135,7 +155,6 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
             </div>
         <?php } else echo "<h4>Only approved Teachers can do this action</h4 >"; ?>
     </div>
-
     <div id="analytics" class="p-4 view">
         <button class="btn btn-primary float-right" onclick="view(['profile'])">Back to Profile</button>
         <br><br>
@@ -239,6 +258,47 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `teachers` WHERE u
                     </form>
                 </div>
             </div>
+        <?php } else echo "<h4>Only approved Teachers can do this action.</h4>"; ?>
+    </div>
+    <div id="students" class="p-4 view">
+        <button class="btn btn-primary float-right" onclick="view(['profile'])">Back to Profile</button>
+        <br><br>
+        <?php if ($data["approved"]) { ?>
+            <h3>Students</h3>
+            <br>
+            <form method="post" class="border rounded-lg p-4">
+                <h5>Add a student</h5><br>
+                Username <br>
+                <input type="text" class="border rounded-lg p-1" name="username" required>
+                <button name="add-student" class="btn btn-primary ">Add</button>
+            </form>
+            <br><br>
+            <table>
+                <th>Student Username</th>
+                <th>Name</th>
+                <th>Action</th>
+                <?php
+                $teacher = $data['username'];
+                $result = mysqli_query($conn, "SELECT * FROM `students` WHERE `assoc_teacher`='$teacher'");
+                $i = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $i += 1;
+                ?>
+                    <tr>
+                        <td><?php echo $row['username'];
+                            ?></td>
+                        <td><?php echo $row['name'];
+                            ?></td>
+                        <td>
+                            <form method="post">
+                                <input type="text" name="id" hidden value="<?php echo $row['id']; ?>">
+                                <button class="btn btn-danger  btn-sm my-1" name="remove-student">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php }
+                echo "<h4>You have " . $i . " students.</h4>" ?>
+            </table>
         <?php } else echo "<h4>Only approved Teachers can do this action.</h4>"; ?>
     </div>
     <?php include_once "../res/com/footer.html" ?>

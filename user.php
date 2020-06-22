@@ -91,11 +91,11 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             echo '<div class="alert alert-warning m-4">Username Already Taken. Try Another</div>';
         } else {
             $submit = true;
-            if (pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION) !== 'jpg'){
+            if (pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION) !== 'jpg') {
                 echo '<div class="alert alert-danger m-4">Uploaded Image must be a JPG file.</div>';
                 $submit = false;
             }
-            if (pathinfo($_FILES['resume']['name'], PATHINFO_EXTENSION) !== 'pdf'){
+            if (pathinfo($_FILES['resume']['name'], PATHINFO_EXTENSION) !== 'pdf') {
                 echo '<div class="alert alert-danger m-4">Uploaded Resume must be a PDF file.</div>';
                 $submit = false;
             }
@@ -142,7 +142,7 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             if (send_mail(mysqli_fetch_assoc(mysqli_query($conn, "SELECT `email` FROM `teachers` WHERE username='$username'"))["email"], "Password Recovery - ITI.com", "Dear user,<br>Your OTP is:<h2>" . $vc . "</h2>Thanks,<br>ITI Team")) {
                 echo '<div class="alert alert-success m-4">Verification Code has been sent to your Email Address</div>';
                 $exe = 'view(["teacher-submit-reset"])';
-            } else{
+            } else {
                 echo '<div class="alert alert-danger m-4">Something went Wrong.</div>';
                 $exe = "view(['teacher-forgot'])";
             }
@@ -150,11 +150,10 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
     } else if (array_key_exists("student-submit-reset", $_POST)) {
         if ($_POST["otp"] == $_SESSION["vc"]) {
             $password = hash("sha256", $_POST["password"]);
-            if (mysqli_query($conn, "UPDATE `students` SET `password`='$password'")){
+            if (mysqli_query($conn, "UPDATE `students` SET `password`='$password'")) {
                 echo '<div class="alert alert-success m-4">Password Changed Successfully.</div>';
                 $exe = "view(['student-login'])";
-            }
-            else {
+            } else {
                 echo '<div class="alert alert-danger m-4">Something went wrong.</div>';
                 $exe = "view(['student-submit-reset'])";
             }
@@ -179,7 +178,7 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
     } else if (array_key_exists("admin", $_POST)) {
         error_reporting(0);
         $username = $_POST['username'];
-        if (mysqli_fetch_assoc(mysqli_query($conn, "SELECT `password` FROM `admin` where `username`='$username'"))['password'] == hash("sha256",$_POST['password'])) {
+        if (mysqli_fetch_assoc(mysqli_query($conn, "SELECT `password` FROM `admin` where `username`='$username'"))['password'] == hash("sha256", $_POST['password'])) {
             $_SESSION['logged'] = 'admin';
             $_SESSION['username'] = $username;
             header("location: admin/");
@@ -208,7 +207,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <a href="javascript:view(['student-forgot'])">Forgot Password</a>. <br>
             <a href="javascript:view(['student-signup'])">Create Account</a>.
         </div>
-
         <div class="view" id="teacher-login">
             <div class="btn-group" style="width: 100%;">
                 <button class="btn btn-light" onclick="view(['student-login'])">Student</button>
@@ -226,7 +224,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <a href="javascript:view(['teacher-forgot'])">Forgot Password</a>. <br>
             <a href="javascript:view(['teacher-signup'])">Create Account</a>.
         </div>
-
         <div class="view" id="teacher-signup">
             <div class="btn-group" style="width: 100%;">
                 <button class="btn btn-light" onclick="view(['student-signup'])">Student</button>
@@ -259,7 +256,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             </form><br>
             <a href="javascript:view(['teacher-login'])">Login here</a>
         </div>
-
         <div class="view" id="student-signup">
             <div class="btn-group" style="width: 100%;">
                 <button class="btn btn-success">Student</button>
@@ -286,7 +282,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             </form><br>
             <a href="javascript:view(['student-login'])">Login here</a>
         </div>
-
         <div class="view" id="student-forgot">
             <div class="btn-group" style="width: 100%;">
                 <button class="btn btn-success">Student</button>
@@ -302,7 +297,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <br><br>
             <a href="javascript:view(['student-login'])">Back</a>
         </div>
-
         <div class="view" id="teacher-forgot">
             <div class="btn-group" style="width: 100%;">
                 <button class="btn btn-light" onclick="view(['student-forgot'])">Student</button>
@@ -318,7 +312,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <br><br>
             <a href="javascript:view(['teacher-login'])">Back</a>
         </div>
-
         <div class="view" id="student-submit-reset">
             <h4>Reset Password</h4>
             <form method="post">
@@ -333,7 +326,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <br><br>
             <a href="javascript:view(['student-forgot'])">Back</a>
         </div>
-
         <div class="view" id="teacher-submit-reset">
             <h4>Reset Password</h4>
             <form method="post">
@@ -348,7 +340,6 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
             <br><br>
             <a href="javascript:view(['teacher-forgot'])">Back</a>
         </div>
-
         <div class="view" id="admin">
             <h4>Admin Login</h4>
             <form method="POST">
@@ -359,19 +350,18 @@ if (isset($_SESSION['logged']) && $_SESSION["logged"] == "admin")
                 <button class="btn btn-primary w-100" name="admin" type="submit">Login</button>
             </form>
         </div>
-
     </div>
 
     <script src="res/js/main.js"></script>
 
     <?php
     include_once "res/com/footer.html";
-    
+
     if ($_GET['action'] == 'admin')
         $exe = "view(['admin'])";
     ?>
     <script>
-view(['student-login']);
+        view(['student-login']);
         <?php echo $exe; ?>
     </script>
 </body>

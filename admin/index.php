@@ -94,6 +94,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-success">Notice</button>
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-light" onclick="view(['students'])">Students</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
             <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
@@ -122,6 +123,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
             <button class="btn btn-success">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-light" onclick="view(['students'])">Students</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
             <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
@@ -160,6 +162,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-success">Teachers</button>
+            <button class="btn btn-light" onclick="view(['students'])">Students</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
             <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
@@ -214,11 +217,60 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
         }
         ?>
     </div>
+    <div class="view" id="students">
+        <div class="btn-group">
+            <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
+            <button class="btn btn-light" onclick="view(['about'])">About</button>
+            <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-success">Students</button>
+            <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
+            <button class="btn btn-light" onclick="view(['payment'])">Payments</button>
+        </div><br><br>
+        <h3>Students</h3>
+        <?php
+        $i=0;
+        $result = mysqli_query($conn, "SELECT * FROM `teachers` WHERE `approved`= 1");
+        while ($row = mysqli_fetch_assoc($result)) {
+            $i+=1;
+        ?>
+            <div class="border rounded-lg p-4 my-2">
+                <h5><?php echo $i.". ".$row['name']; ?></h5>
+                <br>
+                <?php
+                $teacher = $row['username'];
+                $result2 = mysqli_query($conn, "SELECT * FROM `students` WHERE `assoc_teacher`='$teacher'");
+                echo "<div class='alert alert-primary'>No. of Students: ".mysqli_num_rows($result2)."</div>";
+                if (mysqli_num_rows($result2) > 0) {
+                ?>
+                    <table>
+                        <th>Sno.</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <?php
+                        $i=0;
+                        while ($row2 = mysqli_fetch_assoc($result2)) {
+                            $i+=1; ?>
+                            <tr>
+                                <td><?php echo $i; ?></td>
+                                <td><?php echo $row2['username']; ?></td>
+                                <td><?php echo $row2['name']; ?></td>
+                                <td><?php echo $row2['email']; ?></td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                <?php } ?>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
     <div class="view" id="courses">
         <div class="btn-group">
             <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-light" onclick="view(['students'])">Students</button>
             <button class="btn btn-success">Courses</button>
             <button class="btn btn-light" onclick="view(['payment'])">Payment</button>
         </div><br><br>
@@ -267,6 +319,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `admin` WHERE user
             <button class="btn btn-light" onclick="view(['notice'])">Notice</button>
             <button class="btn btn-light" onclick="view(['about'])">About</button>
             <button class="btn btn-light" onclick="view(['teachers'])">Teachers</button>
+            <button class="btn btn-light" onclick="view(['students'])">Students</button>
             <button class="btn btn-light" onclick="view(['courses'])">Courses</button>
             <button class="btn btn-success">Payments</button>
         </div><br><br>
